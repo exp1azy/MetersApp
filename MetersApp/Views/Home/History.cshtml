@@ -1,0 +1,22 @@
+﻿@model List<MetersApp.ViewModels.IndicationHistoryModel>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="main">
+    <h2>@Model.First().Title</h2>
+@{
+    int i = 0;
+    foreach(var panelModel in Model)
+    {
+        i++;
+        <div class="bottom">
+            <span class="data">@panelModel.Data</span>
+            <span class="data">@panelModel.Fixed</span>
+        </div>
+        if(i != Model.Count)
+        {
+            <div class="line"></div>          
+        }     
+    }  
+} 
+</div>

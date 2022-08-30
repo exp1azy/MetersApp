@@ -1,0 +1,18 @@
+﻿@model List<MetersApp.ViewModels.MeterPanelsModel>
+@{
+    foreach(var panelModel in Model)
+    {
+        <div class="sub__panel">
+            <a class="panel_anchor" href="~/Home/History/@panelModel.Id">
+                <div>
+                    <h2 class="sub__title">@panelModel.Title</h2>
+                    <h3 class="sub__span-center">@panelModel.Value</h3>
+                </div>          
+                <div class="sub__span-bottom">
+                    <span class="sub__span-down @(panelModel.Delta < 0 ? "negative" : "positive")">@($"{(panelModel.Delta < 0 ? "" : "+")}{panelModel.Delta}")</span>
+                    <span class="sub__span-down">@panelModel.Date</span>
+                </div>
+            </a>
+        </div>
+    }   
+}

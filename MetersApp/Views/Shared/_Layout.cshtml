@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>@ViewData["Title"]</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@200&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="~/css/site.css">
+    </head>
+    <body>        
+        <header>   
+            <div class="panel-head"> 
+                <a class="panel_anchor" href="/">
+                    <div class="navigation">              
+                        <h1 class="heading">This is Meters app</h1>
+                    </div>
+                </a>
+                <div class="navigation">              
+                    <h1 class="heading"><button class="button-add" onclick="location.href = '/Home/New'">Add</button></h1>
+                </div>
+            </div>
+        </header> 
+        <main>
+            @RenderBody()  
+        </main>
+    </body>
+</html>

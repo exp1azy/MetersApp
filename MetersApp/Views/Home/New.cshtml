@@ -1,0 +1,31 @@
+﻿@model  MetersApp.Models.NewIndication
+@{
+    Layout = "~/Views/Shared/_LayoutForm.cshtml";
+    var counterList = ViewBag.CounterList as List<MetersApp.ViewModels.CounterModel>;
+}
+<form action="" class="form" method="post">
+    <h1 class="form__title">Counter form</h1>
+    <select name="meterId" class="form__select">
+        @{
+            foreach (var counter in counterList)
+            {
+                <option value="@counter.Id">@counter.Title</option>
+            }
+        }
+    </select>
+    <div class="label__input">
+        <input name="indication" class="input__style" type="text" placeholder=" " value="@(Model == null ? string.Empty : Model.Indication)">
+        <label class="label__style">Enter counter data</label>
+        @{
+            if (!ViewContext.ModelState.IsValid)
+            {
+                var state = ViewContext.ModelState.First(i => i.Value != null && i.Value.ValidationState == Microsoft.AspNetCore.Mvc.ModelBinding.ModelValidationState.Invalid);
+                <div class="error">@state.Value.Errors.First().ErrorMessage</div>
+            }
+        }
+    </div>           
+    <div class="buttons">
+        <button class="first__button" type="submit">OK</button>
+        <button class="second__button" onclick="location.href = '@Url.Action("Index","Home")';return false;">Cancel</button>
+    </div>
+</form>

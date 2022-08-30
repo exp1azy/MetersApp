@@ -1,0 +1,102 @@
+﻿body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Albert Sans', sans-serif;
+}
+
+.form {
+    width: 500px;
+    padding: 32px;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px #ccc;
+    letter-spacing: 1px;
+}
+
+.form__title {
+    margin-top: 0;
+    text-align: center;
+}
+
+.form__select {
+    margin-bottom: 32px;
+    width: 100%;
+    border: none;
+    font-family: 'Albert Sans', sans-serif;
+    font-size: 26px;
+    color: #777777;
+}
+
+.label__input {
+    position: relative;
+}
+
+.label__style {
+    position:absolute;
+    top: 0;
+    z-index: -1;
+    transition: 0.3s;
+    font-size: 20px;
+    color: #777777;
+}
+
+.input__style {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #cccccc;
+    font-family: 'Albert Sans', sans-serif;
+    outline: none;
+    background-color: transparent;
+    font-size: 28px;
+    transition: 0.3s;
+    color: #777777;
+    margin-bottom: 64px;
+}
+
+.input__style:focus {
+    border-bottom: 1px solid #5f5f5f;
+}
+
+.input__style:focus ~ .label__style,
+.input__style:not(:placeholder-shown) ~ .label__style {
+    top: -18px;
+    font-size: 16px;
+    color: #5f5f5f;
+}
+
+.first__button,
+.second__button {
+    letter-spacing: 1px;
+    font-family: 'Albert Sans', sans-serif;
+    font-size: 24px;
+    border: none;
+    cursor: pointer;
+    color: #5f5f5f;
+    background-color: #e2e2e2;
+    font-weight: bold;
+    width: 120px;
+    height: 45px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.first__button:focus,
+.second__button:focus,
+.first__button:hover,
+.second__button:hover {
+    background-color: #ebebeb;
+    color: #888888;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.error {
+    color: red;
+    margin-bottom: 64px;
+    font-size: 24px;
+}
